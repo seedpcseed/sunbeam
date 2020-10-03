@@ -157,7 +157,7 @@ function install_env_vars () {
 }
 
 function install_sunbeamlib () {
-    activate_sunbeam
+    # activate_sunbeam
     debug_capture pip install --upgrade $__sunbeam_dir 2>&1
     if [[ $(__test_sunbeam) != true ]]; then
 	installation_error "Library installation"
