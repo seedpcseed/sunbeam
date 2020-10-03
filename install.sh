@@ -141,7 +141,7 @@ function install_conda () {
 }
 
 function install_environment () {
-    debug_capture conda env update --name=$__sunbeam_env \
+    debug_capture conda update  \
 			  --quiet --file environment.yml
     if [[ $(__test_env) != true ]]; then
 	installation_error "Environment creation"
