@@ -61,7 +61,8 @@ function installation_error () {
 # Set variables
 __conda_path="${arg_c:-${HOME}/miniconda3}"
 __sunbeam_dir="${arg_s:-$(readlink -f ${__dir})}"
-__sunbeam_env="${arg_e:-sunbeam}"
+#__sunbeam_env="${arg_e:-sunbeam}"
+__sunbeam_env="${arg_e:-conda}"
 __update_lib=false
 __update_env=false
 if [[ "${arg_u}" = "all" || "${arg_u}" = "env" ]]; then
@@ -197,7 +198,7 @@ if [[ $__env_exists = true && $__update_env = false ]]; then
     info "Specified environment already exists (use '--update env' to update)"
 else
     info "Creating Sunbeam environment..."
-    install_environment
+    #install_environment
     __env_changed=true
 fi
 
@@ -228,9 +229,12 @@ if [[ $__old_path != *"${__conda_path}/bin"* ]]; then
     warning "To add it to your path, run "
     warning "   'echo \"export PATH=\$PATH:${__conda_path}/bin\" >> ~/.bashrc'"
     warning "and close and re-open your terminal session to apply."
-    warning "When finished, run 'conda activate ${__sunbeam_env}' to begin."
+    #warning "When finished, run 'conda activate ${__sunbeam_env}' to begin."
 else
-    info "Done. Run 'conda activate ${__sunbeam_env}' to begin."
+    i# nfo "Done. Run 'conda activate ${__sunbeam_env}' to begin."
+    info "Done."
+fi
+
 fi
 
    
